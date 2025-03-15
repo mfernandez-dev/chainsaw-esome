@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.chainsawesome</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>parent-pom</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -21,6 +21,7 @@
 
     <modules>
         <module>bootstrap</module>
+        <module>conversational-module</module>
     </modules>
 
     <scm>
