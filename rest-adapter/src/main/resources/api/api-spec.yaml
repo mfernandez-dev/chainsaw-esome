@@ -1,0 +1,25 @@
+openapi: 3.0.0
+info:
+  title: Conversational API
+  description: Conversational api
+  version: 1.0.0-SNAPSHOT
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /test:
+    get:
+      description: Method to tests the api
+      responses:
+        200:
+          description: Success response
+          content:
+            application/json:
+              schema:
+                title: Prueba
+                description: Returns object with hello world
+                properties:
+                 responseText:
+                   description: String
+                   type: string
+                   example: Hola mundo
+  

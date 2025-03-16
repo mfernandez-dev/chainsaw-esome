@@ -9,13 +9,11 @@
 
     <groupId>com.chainsawesome.conversational-module</groupId>
     <artifactId>parent-pom</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>conversational-module</name>
 
     <modules>
-        <module>driving-ports</module>
         <module>driven-ports</module>
         <module>domain</module>
         <module>application</module>

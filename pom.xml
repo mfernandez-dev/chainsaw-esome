@@ -22,6 +22,7 @@
     <modules>
         <module>bootstrap</module>
         <module>conversational-module</module>
+        <module>rest-adapter</module>
     </modules>
 
     <scm>
@@ -65,6 +66,7 @@
                         </annotationProcessorPaths>
                     </configuration>
                 </plugin>
+
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
@@ -78,6 +80,36 @@
                         </excludes>
                     </configuration>
                 </plugin>
+
+
+                <plugin>
+                    <groupId>org.openapitools</groupId>
+                    <artifactId>openapi-generator-maven-plugin</artifactId>
+                    <version>7.12.0</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                            <configuration>
+                                <!-- Aquí ${project.basedir} se resolverá al directorio del módulo -->
+                                <inputSpec>${project.basedir}/src/main/resources/api/api-spec.yaml</inputSpec>
+                                <generatorName>spring</generatorName>
+                                <output>${project.build.directory}/generated-sources/openapi</output>
+                                <apiPackage>${project.groupId}.api</apiPackage>
+                                <modelPackage>${project.groupId}.model</modelPackage>
+                                <configOptions>
+                                    <dateLibrary>java8</dateLibrary>
+                                    <interfaceOnly>true</interfaceOnly>
+                                    <useJakartaEe>true</useJakartaEe>
+                                    <useSpringBoot3>true</useSpringBoot3>
+                                    <useSpringController>true</useSpringController>
+                                </configOptions>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
             </plugins>
         </pluginManagement>
     </build>
